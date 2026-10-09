@@ -23,6 +23,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3d5356c7-4998-4b5b-b46c-4199f4a2d268"
+      }
+    },
+    "owner": "ashishdubey743"
   }
 }
