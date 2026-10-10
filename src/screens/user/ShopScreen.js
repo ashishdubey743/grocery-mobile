@@ -88,7 +88,7 @@ export default function ShopScreen({ navigation }) {
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
-        style={{ maxHeight: 46 }}
+        style={styles.chipsRow}
         contentContainerStyle={{ paddingHorizontal: spacing(2), gap: 8 }}
       >
         <Chip label="All" active={activeCat === null} onPress={() => setActiveCat(null)} />
@@ -160,6 +160,7 @@ const styles = StyleSheet.create({
   },
   ptsPillText: { color: colors.primary, fontWeight: "800" },
   searchWrap: { paddingHorizontal: spacing(2), marginTop: spacing(1.5) },
+  chipsRow: { maxHeight: 60, marginTop: spacing(1), marginBottom: spacing(0.5) },
   search: {
     height: 48,
     backgroundColor: colors.white,

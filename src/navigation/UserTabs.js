@@ -1,6 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import ShopScreen from "../screens/user/ShopScreen";
 import CartScreen from "../screens/user/CartScreen";
@@ -27,6 +28,7 @@ const ICONS = {
 export default function UserTabs() {
   const { isAdmin } = useAuth();
   const { count } = useCart();
+  const insets = useSafeAreaInsets();
 
   return (
     <Tab.Navigator
@@ -34,7 +36,11 @@ export default function UserTabs() {
         headerShown: false,
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.muted,
-        tabBarStyle: { height: 60, paddingBottom: 8, paddingTop: 6 },
+        tabBarStyle: {
+          height: 60 + insets.bottom,
+          paddingBottom: 8 + insets.bottom,
+          paddingTop: 6,
+        },
         tabBarIcon: ({ color, size }) => (
           <Ionicons name={ICONS[route.name] || "ellipse-outline"} size={size} color={color} />
         ),
